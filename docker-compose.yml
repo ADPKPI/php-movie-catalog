@@ -1,0 +1,10 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"  # Прив'язуємо порт 8080 на хості до порту 80 у контейнері
+    environment:
+      NODE_ENV: production # Задаємо середовище виконання
+    restart: always        # Автоматично перезапускаємо контейнер при збої
